@@ -7,7 +7,7 @@ const PRODUCTS = [
     categoryBg: "Сгъваеми маси",
     price: 70.02,
     oldPrice: null,
-    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+    image: "assets/table_alu_2m.png",
     rating: 5,
     tag: "СОБСТВЕНО ПРОИЗВОДСТВО",
     description: "Професионална сгъваема алуминиева маса с дължина 2 метра. Изключително лека, стабилна и удобна за бита, събития и улични продажби. Плот от висококачествен водоустойчив шперплат с подсилен алуминиев кант. Лесна за пренасяне и сгъване за секунди.",
@@ -25,7 +25,7 @@ const PRODUCTS = [
     categoryBg: "Сгъваеми маси",
     price: 92.12,
     oldPrice: 110.00,
-    image: "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&q=80&w=800",
+    image: "assets/table_alu_3m.png",
     rating: 5,
     tag: "ПРОМО ПАКЕТ",
     description: "Премиум сгъваема маса с дължина 3 метра, окомплектована с подарък висококачествен комплект отвертки. Перфектният избор за пазари, търговия на открито и домашни ремонти. Здрава конструкция с висока товароносимост.",
@@ -45,7 +45,7 @@ const PRODUCTS = [
     oldPrice: 60.30,
     rating: 5,
     tag: "-17% НАМАЛЕНИЕ",
-    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+    image: "assets/table_wood.png",
     description: "Класическа дървена сгъваема маса собствено производство, изработена от подбран иглолистен материал и технически шперплат. Компактна, здрава и изключително икономична. Идеална за тераси, градини и къмпинг.",
     specs: {
       metal: "Иглолистна дървесина & Тополов шперплат",
@@ -61,7 +61,7 @@ const PRODUCTS = [
     categoryBg: "Шперплат",
     price: 4.50,
     oldPrice: null,
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=800",
+    image: "assets/plywood_sheet.png",
     rating: 5,
     tag: "НАЙ-ПРОДАВАН",
     description: "Шперплат от топола с дебелина 3 мм, нарязан във формат А3 (297х420 мм). Идеален за лазерно рязане, гравиране, моделизъм и училищни хоби проекти. FAVO е единственият производител в България на висококачествен шперплат с дебелина 2 и 3 мм.",
@@ -79,7 +79,7 @@ const PRODUCTS = [
     categoryBg: "Сувенири",
     price: 29.34,
     oldPrice: null,
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
+    image: "assets/wood_wine_box.png",
     rating: 5,
     tag: "УНИКАЛЕН ПОДАРЪК",
     description: "Луксозна дървена кутия за бутилка вино с индивидуален дизайн и прецизно лазерно гравиране. Подходяща за юбилеи, сватби, лични празници или корпоративни подаръци. Здраво и фино затваряне с месингов обков.",
@@ -97,7 +97,7 @@ const PRODUCTS = [
     categoryBg: "Сувенири",
     price: 29.34,
     oldPrice: 39.12,
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800",
+    image: "assets/wood_calendar.png",
     rating: 5,
     tag: "ХИТ СУВЕНИР",
     description: "Стилен и екологичен вечен календар на стойка, изработен от естествена липа. Прекрасен подарък за офис или дом. Позволява лесно нагласяне на деня и месеца чрез завъртане на ринговете. Възможност за персонализирано гравиране по Ваш дизайн.",
@@ -115,7 +115,7 @@ const PRODUCTS = [
     categoryBg: "Инструменти",
     price: 15.80,
     oldPrice: null,
-    image: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=800",
+    image: "assets/paint_brushes.png",
     rating: 4,
     tag: "НОВО",
     description: "Професионален комплект за боядисване, включващ два валяка от микрофибър с различна дължина и ергономична дръжка. Осигурява идеално гладко разпределение на боята без капане и разплискване. Подходящ за латекс, акрилни и алкидни бои.",
@@ -133,7 +133,7 @@ const PRODUCTS = [
     categoryBg: "Сувенири",
     price: 18.19,
     oldPrice: 25.00,
-    image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800",
+    image: "assets/christmas_wreath.png",
     rating: 5,
     tag: "СЕЗОННА КОЛЕКЦИЯ",
     description: "Ръчно декориран голям коледен венец с прецизни детайли, изрязани с лазер. Прекрасна украса за входна врата или трапезария, която носи празнично настроение и топлина. Направен изцяло от екологични биоразградими материали.",
@@ -148,7 +148,7 @@ const PRODUCTS = [
 
 // --- SHOPPING CART STATE ---
 let cart = JSON.parse(localStorage.getItem('favoshop_cart')) || [];
-let activeQuickViewProduct = null;
+let activeProduct = null;
 
 // --- DYNAMIC RENDER FUNCTIONS ---
 function renderCatalog(filter = "all") {
@@ -179,17 +179,17 @@ function renderCatalog(filter = "all") {
 
     card.innerHTML = `
       ${tagHtml}
-      <div class="product-image-container">
+      <div class="product-image-container" onclick="openProductPage(${product.id})">
         <img class="product-img" src="${product.image}" alt="${product.name}" loading="lazy">
         <div class="product-overlay-actions">
-          <button class="action-icon-btn" onclick="openQuickView(${product.id})" title="Бърз преглед">
-            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+          <button class="action-icon-btn" title="Преглед на продукт">
+            <svg style="width: 20px; height: 20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
           </button>
         </div>
       </div>
       <div class="product-details">
         <span class="product-category">${product.categoryBg}</span>
-        <h3 class="product-name">${product.name}</h3>
+        <h3 class="product-name" style="cursor: pointer;" onclick="openProductPage(${product.id})">${product.name}</h3>
         <div class="product-rating">${ratingStars}</div>
         <div class="product-price-box">
           ${priceHtml}
@@ -211,7 +211,6 @@ function updateCartCount() {
   });
 }
 
-// --- SAVE CART ---
 function saveCart() {
   localStorage.setItem('favoshop_cart', JSON.stringify(cart));
   updateCartCount();
@@ -294,61 +293,84 @@ function renderCartItems() {
   if (checkoutFormEl) checkoutFormEl.classList.add("active");
 }
 
-// --- CART SIDEBAR VISIBILITY ---
 function openCartSidebar() {
   document.getElementById("cart-overlay").classList.add("active");
 }
 
-// --- CLOSE CART ---
 function closeCartSidebar() {
   document.getElementById("cart-overlay").classList.remove("active");
 }
 
-// --- QUICK VIEW MODAL CONTROLS ---
-function openQuickView(productId) {
+// --- DEDICATED PRODUCT PAGE CONTROLS ---
+function openProductPage(productId) {
   const product = PRODUCTS.find(p => p.id === productId);
   if (!product) return;
   
-  activeQuickViewProduct = product;
+  activeProduct = product;
+  window.location.hash = `product/${productId}`;
   
-  document.getElementById("modal-cat").textContent = product.categoryBg;
-  document.getElementById("modal-title").textContent = product.name;
-  document.getElementById("modal-desc").textContent = product.description;
-  document.getElementById("modal-image").src = product.image;
-  document.getElementById("modal-image").alt = product.name;
+  document.getElementById("detail-cat").textContent = product.categoryBg;
+  document.getElementById("detail-title").textContent = product.name;
+  document.getElementById("detail-desc").textContent = product.description;
+  document.getElementById("detail-image").src = product.image;
+  document.getElementById("detail-image").alt = product.name;
   
-  // Specs
-  document.getElementById("spec-metal").textContent = product.specs.metal;
-  document.getElementById("spec-weight").textContent = product.specs.weight;
-  document.getElementById("spec-stone").textContent = product.specs.stone;
-  document.getElementById("spec-packaging").textContent = product.specs.packaging;
+  // Technical Specs
+  document.getElementById("detail-spec-metal").textContent = product.specs.metal;
+  document.getElementById("detail-spec-weight").textContent = product.specs.weight;
+  document.getElementById("detail-spec-stone").textContent = product.specs.stone;
+  document.getElementById("detail-spec-packaging").textContent = product.specs.packaging;
   
-  // Rating & Price
+  // Stars Rating
   let ratingStars = "";
   for (let i = 1; i <= 5; i++) {
     ratingStars += `<i class="${i <= product.rating ? 'fas' : 'far'} fa-star"></i>`;
   }
-  document.getElementById("modal-stars").innerHTML = ratingStars;
+  document.getElementById("detail-stars").innerHTML = ratingStars;
   
-  const priceBox = document.getElementById("modal-price");
+  // Price setup
+  const priceBox = document.getElementById("detail-price-box");
   if (product.oldPrice) {
     priceBox.innerHTML = `
-      <span style="font-size: 1.2rem; color: var(--text-muted); text-decoration: line-through; font-weight: 500;">${product.oldPrice.toFixed(2)} лв.</span>
+      <span style="font-size: 1.4rem; color: var(--text-muted); text-decoration: line-through; font-weight: 500;">${product.oldPrice.toFixed(2)} лв.</span>
       <span style="color: var(--accent);">${product.price.toFixed(2)} лв.</span>
     `;
   } else {
     priceBox.innerHTML = `<span>${product.price.toFixed(2)} лв.</span>`;
   }
   
-  // Reset Qty stepper in modal
-  document.getElementById("modal-qty-val").textContent = "1";
+  // Stepper Reset
+  document.getElementById("detail-qty-val").textContent = "1";
   
-  document.getElementById("quickview-overlay").classList.add("active");
+  // Show / Hide Views
+  document.getElementById("home-view").style.display = "none";
+  document.getElementById("product-view").style.display = "block";
+  
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function closeQuickView() {
-  document.getElementById("quickview-overlay").classList.remove("active");
-  activeQuickViewProduct = null;
+function navigateToHome(event) {
+  if (event) event.preventDefault();
+  window.location.hash = "";
+  document.getElementById("product-view").style.display = "none";
+  document.getElementById("home-view").style.display = "block";
+  activeProduct = null;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Router representation for Direct Hash Links
+function handleHashRoute() {
+  const hash = window.location.hash;
+  if (hash.startsWith("#product/")) {
+    const productId = parseInt(hash.replace("#product/", ""));
+    if (productId) {
+      openProductPage(productId);
+    }
+  } else {
+    document.getElementById("product-view").style.display = "none";
+    document.getElementById("home-view").style.display = "block";
+    activeProduct = null;
+  }
 }
 
 // --- INTERACTIVE CHECKOUT SIMULATION ---
@@ -364,14 +386,10 @@ function handleCheckout(event) {
     return;
   }
   
-  // Generate random order tracking number
   const orderNum = "FAVO-" + Math.floor(100000 + Math.random() * 900000);
-  
-  // Display the Success Screen Overlay
   document.getElementById("order-tracking-id").textContent = orderNum;
   document.getElementById("success-screen").classList.add("active");
   
-  // Clear Shopping Cart state
   cart = [];
   saveCart();
   closeCartSidebar();
@@ -387,6 +405,10 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCatalog("all");
   updateCartCount();
   renderCartItems();
+  
+  // Route check
+  handleHashRoute();
+  window.addEventListener("hashchange", handleHashRoute);
   
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
@@ -407,31 +429,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
-  const qtyDecBtn = document.getElementById("modal-qty-dec");
-  const qtyIncBtn = document.getElementById("modal-qty-inc");
-  const qtyValEl = document.getElementById("modal-qty-val");
+  // Steppers for Details View Page
+  const detailDecBtn = document.getElementById("detail-qty-dec");
+  const detailIncBtn = document.getElementById("detail-qty-inc");
+  const detailQtyVal = document.getElementById("detail-qty-val");
   
-  if (qtyDecBtn && qtyIncBtn && qtyValEl) {
-    qtyDecBtn.addEventListener("click", () => {
-      let currentVal = parseInt(qtyValEl.textContent);
+  if (detailDecBtn && detailIncBtn && detailQtyVal) {
+    detailDecBtn.addEventListener("click", () => {
+      let currentVal = parseInt(detailQtyVal.textContent);
       if (currentVal > 1) {
-        qtyValEl.textContent = (currentVal - 1).toString();
+        detailQtyVal.textContent = (currentVal - 1).toString();
       }
     });
     
-    qtyIncBtn.addEventListener("click", () => {
-      let currentVal = parseInt(qtyValEl.textContent);
-      qtyValEl.textContent = (currentVal + 1).toString();
+    detailIncBtn.addEventListener("click", () => {
+      let currentVal = parseInt(detailQtyVal.textContent);
+      detailQtyVal.textContent = (currentVal + 1).toString();
     });
   }
   
-  const modalAddBtn = document.getElementById("modal-add-to-cart");
-  if (modalAddBtn) {
-    modalAddBtn.addEventListener("click", () => {
-      if (activeQuickViewProduct) {
-        const qty = parseInt(qtyValEl.textContent);
-        addToCart(activeQuickViewProduct.id, qty);
-        closeQuickView();
+  const detailAddBtn = document.getElementById("detail-add-btn");
+  if (detailAddBtn) {
+    detailAddBtn.addEventListener("click", () => {
+      if (activeProduct) {
+        const qty = parseInt(detailQtyVal.textContent);
+        addToCart(activeProduct.id, qty);
       }
     });
   }

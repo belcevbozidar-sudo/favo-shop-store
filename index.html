@@ -23,7 +23,7 @@
   <!-- --- PREMIUM NAVIGATION HEADER --- -->
   <header>
     <div class="container header-container">
-      <a href="#" class="logo">
+      <a href="#" class="logo" onclick="navigateToHome(event)">
         <!-- Wood Crafted Saw / Craft SVG Icon -->
         <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M12 2L2 22h20L12 2z" stroke-linecap="round" stroke-linejoin="round"/>
@@ -34,9 +34,9 @@
       </a>
       
       <nav class="nav-menu">
-        <a href="#" class="nav-link">Начало</a>
-        <a href="#catalog" class="nav-link">Каталог</a>
-        <a href="#about" class="nav-link">За фирмата</a>
+        <a href="#" class="nav-link" onclick="navigateToHome(event)">Начало</a>
+        <a href="#catalog" class="nav-link" onclick="navigateToHome(event)">Каталог</a>
+        <a href="#about" class="nav-link" onclick="navigateToHome(event)">За фирмата</a>
         <a href="#footer" class="nav-link">Контакти</a>
       </nav>
       
@@ -59,98 +59,161 @@
     </div>
   </header>
 
-  <!-- --- HERO SECTION --- -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="hero-tagline">Традиция & Дървообработване от 1993 г.</span>
-        <h1 class="hero-title">Естествена Красота и Изключителна Здравина</h1>
-        <p class="hero-description">Открийте нашите патентовани сгъваеми алуминиеви и дървени маси, висококачествен шперплат от липа и топола за лазерно гравиране и уникални дървени сувенири за всеки Ваш празник.</p>
-        <div class="hero-cta-group">
-          <a href="#catalog" class="btn-premium">Разгледай Продуктите</a>
-          <a href="tel:0889500937" class="btn-outline">Бърза Поръчка</a>
+  <!-- --- MAIN HOME CONTENT (Hero, Catalog, About) --- -->
+  <div id="home-view">
+    <!-- --- HERO SECTION --- -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-tagline">Традиция & Дървообработване от 1993 г.</span>
+          <h1 class="hero-title">Естествена Красота и Изключителна Здравина</h1>
+          <p class="hero-description">Открийте нашите патентовани сгъваеми алуминиеви и дървени маси, висококачествен шперплат от липа и топола за лазерно гравиране и уникални дървени сувенири за всеки Ваш празник.</p>
+          <div class="hero-cta-group">
+            <a href="#catalog" class="btn-premium">Разгледай Продуктите</a>
+            <a href="tel:0889500937" class="btn-outline">Бърза Поръчка</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-image-circle"></div>
+          <img class="hero-img" src="assets/favo_hero.png" alt="FAVO Дървообработване">
         </div>
       </div>
-      <div class="hero-image-wrapper">
-        <div class="hero-image-circle"></div>
-        <img class="hero-img" src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&q=80&w=1000" alt="FAVO Дървообработване">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- --- VALUE PROPOSITION / TRUST BADGES --- -->
-  <section class="pillars">
-    <div class="container pillars-grid">
-      <div class="pillar-card">
-        <div class="pillar-icon-box">
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+    <!-- --- VALUE PROPOSITION / TRUST BADGES --- -->
+    <section class="pillars">
+      <div class="container pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Собствено Производство</h3>
+          <p class="pillar-desc">Най-големият производител в Европа на сгъваеми дървени и алуминиеви маси за бита.</p>
         </div>
-        <h3 class="pillar-title">Собствено Производство</h3>
-        <p class="pillar-desc">Най-големият производител в Европа на сгъваеми дървени и алуминиеви маси за бита.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon-box">
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Качествен Шперплат</h3>
+          <p class="pillar-desc">Единствен производител в България на технически шперплат от топола и липа от 2 мм и 3 мм.</p>
         </div>
-        <h3 class="pillar-title">Качествен Шперплат</h3>
-        <p class="pillar-desc">Единствен производител в България на технически шперплат от топола и липа от 2 мм и 3 мм.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="pillar-icon-box">
-          <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="1" y="3" width="15" height="13" stroke-linecap="round" stroke-linejoin="round"/>
-            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="5.5" cy="18.5" r="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="18.5" cy="18.5" r="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="1" y="3" width="15" height="13" stroke-linecap="round" stroke-linejoin="round"/>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="5.5" cy="18.5" r="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="18.5" cy="18.5" r="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="pillar-title">Доставка в Цялата Страна</h3>
+          <p class="pillar-desc">Бърза доставка с куриер Спиди до 2 работни дни в сигурни здрави кашони със застраховка.</p>
         </div>
-        <h3 class="pillar-title">Доставка в Цялата Страна</h3>
-        <p class="pillar-desc">Бърза доставка с куриер Спиди до 2 работни дни в сигурни здрави кашони със застраховка.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- --- PRODUCT CATALOG --- -->
-  <section class="catalog" id="catalog">
+    <!-- --- PRODUCT CATALOG --- -->
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h2 class="section-title">Продукти</h2>
+        <p class="section-subtitle">Качество директно от производителя в Свищов</p>
+        
+        <!-- Category Filter Tabs -->
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">Всички</button>
+          <button class="filter-btn" data-filter="tables">Сгъваеми маси</button>
+          <button class="filter-btn" data-filter="plywood">Шперплат</button>
+          <button class="filter-btn" data-filter="souvenirs">Сувенири & Хоби</button>
+          <button class="filter-btn" data-filter="tools">Инструменти</button>
+        </div>
+        
+        <!-- Interactive Grid for Products -->
+        <div class="product-grid" id="product-grid">
+          <!-- Will be loaded dynamically via Javascript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- --- ABOUT STORY SECTION --- -->
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div class="about-img-box">
+          <img class="about-img" src="assets/favo_about.png" alt="Завод FAVO Свищов">
+        </div>
+        <div class="about-text">
+          <span class="about-badge">За компанията</span>
+          <h2 class="about-title">Наследство в дървообработването</h2>
+          <p class="about-paragraph">Фирма FAVO е създадена през 1993 г. и е специализирана в преработката на дървесина и производство на детайли от дърво и шперплат. През годините се утвърдихме като най-големия производител в Европа на сгъваеми дървени и алуминиеви маси за бита и уличните продажби.</p>
+          <p class="about-paragraph">Ние сме и единственият производител в България на технически шперплат от липа и топола с изключително малки дебелини от 2 мм и 3 мм (до 10 мм), които са перфектни за лазерно изрязване, гравиране и авиомоделизъм. Разполагаме със съвременна база в Западната Индустриална Зона на град Свищов.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- --- DYNAMIC DEDICATED PRODUCT VIEW --- -->
+  <div id="product-view" style="display: none; padding: 4rem 0;">
     <div class="container">
-      <h2 class="section-title">Продукти</h2>
-      <p class="section-subtitle">Качество директно от производителя в Свищов</p>
-      
-      <!-- Category Filter Tabs -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-filter="all">Всички</button>
-        <button class="filter-btn" data-filter="tables">Сгъваеми маси</button>
-        <button class="filter-btn" data-filter="plywood">Шперплат</button>
-        <button class="filter-btn" data-filter="souvenirs">Сувенири & Хоби</button>
-        <button class="filter-btn" data-filter="tools">Инструменти</button>
+      <!-- Breadcrumbs / Navigation Back -->
+      <div style="margin-bottom: 2rem;">
+        <button onclick="navigateToHome(event)" class="btn-outline" style="padding: 0.6rem 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
+          <i class="fas fa-arrow-left"></i> Назад към Каталога
+        </button>
       </div>
-      
-      <!-- Interactive Grid for Products -->
-      <div class="product-grid" id="product-grid">
-        <!-- Will be loaded dynamically via Javascript -->
-      </div>
-    </div>
-  </section>
 
-  <!-- --- ABOUT STORY SECTION --- -->
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-img-box">
-        <img class="about-img" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Завод FAVO Свищов">
-      </div>
-      <div class="about-text">
-        <span class="about-badge">За компанията</span>
-        <h2 class="about-title">Наследство в дървообработването</h2>
-        <p class="about-paragraph">Фирма FAVO е създадена през 1993 г. и е специализирана в преработката на дървесина и производство на детайли от дърво и шперплат. През годините се утвърдихме като най-големия производител в Европа на сгъваеми дървени и алуминиеви маси за бита и уличните продажби.</p>
-        <p class="about-paragraph">Ние сме и единственият производител в България на технически шперплат от липа и топола с изключително малки дебелини от 2 мм и 3 мм (до 10 мм), които са перфектни за лазерно изрязване, гравиране и авиомоделизъм. Разполагаме със съвременна база в Западната Индустриална Зона на град Свищов.</p>
+      <div class="product-page-layout">
+        <div class="product-page-image">
+          <img id="detail-image" src="" alt="" style="width: 100%; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); object-fit: cover; aspect-ratio: 1.1/1;">
+        </div>
+        
+        <div class="product-page-details" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <span class="product-category" id="detail-cat" style="font-size: 0.9rem; text-align: left;">Категория</span>
+          <h1 id="detail-title" style="font-family: var(--font-serif); font-size: 2.5rem; font-weight: 800; color: var(--primary); line-height: 1.2;">Име на продукта</h1>
+          
+          <div style="display: flex; align-items: center; gap: 1rem; color: #facc15;">
+            <div id="detail-stars"></div>
+            <span style="color: var(--text-muted); font-size: 0.9rem;">(Гарантиран Български Произход)</span>
+          </div>
+
+          <div id="detail-price-box" style="font-size: 2rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 1rem;">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <p id="detail-desc" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+            Описание...
+          </p>
+
+          <div class="specs-table" style="background-color: var(--bg-white); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Технически Спецификации</h3>
+            <div style="display: flex; justify-content: space-between;"><strong style="color: var(--primary);">Материал:</strong> <span id="detail-spec-metal" style="color: var(--text-muted);">-</span></div>
+            <div style="display: flex; justify-content: space-between;"><strong style="color: var(--primary);">Размери / Тегло:</strong> <span id="detail-spec-weight" style="color: var(--text-muted);">-</span></div>
+            <div style="display: flex; justify-content: space-between;"><strong style="color: var(--primary);">Производител:</strong> <span id="detail-spec-stone" style="color: var(--text-muted);">-</span></div>
+            <div style="display: flex; justify-content: space-between;"><strong style="color: var(--primary);">Доставка:</strong> <span id="detail-spec-packaging" style="color: var(--text-muted);">-</span></div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 1.5rem; margin-top: 1rem;">
+            <div class="qty-stepper" style="border: 1px solid var(--border-color); border-radius: var(--radius-md); display: flex; align-items: center;">
+              <button class="qty-btn" id="detail-qty-dec" style="padding: 1rem 1.5rem; font-weight: 700;">-</button>
+              <span id="detail-qty-val" style="padding: 0 1rem; font-weight: 700; min-width: 40px; text-align: center;">1</span>
+              <button class="qty-btn" id="detail-qty-inc" style="padding: 1rem 1.5rem; font-weight: 700;">+</button>
+            </div>
+            <button class="btn-premium" id="detail-add-btn" style="flex-grow: 1; padding: 1.2rem 2rem;">Добави в Количката</button>
+          </div>
+
+          <!-- Extra details trust badge -->
+          <div style="display: flex; gap: 1.5rem; margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+            <span><i class="fas fa-truck" style="color: var(--accent); margin-right: 0.3rem;"></i> 2 работни дни</span>
+            <span><i class="fas fa-undo" style="color: var(--accent); margin-right: 0.3rem;"></i> 14 дни право на отказ</span>
+            <span><i class="fas fa-shield-alt" style="color: var(--accent); margin-right: 0.3rem;"></i> Транспортна застраховка</span>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- --- BRAND FOOTER --- -->
   <footer id="footer">
@@ -166,16 +229,16 @@
       <div>
         <h4 class="footer-title">Продукти</h4>
         <ul class="footer-links">
-          <li><a href="#catalog" class="footer-link">Сгъваеми Дървени Маси</a></li>
-          <li><a href="#catalog" class="footer-link">Алуминиеви Маси</a></li>
-          <li><a href="#catalog" class="footer-link">Шперплат Липа & Топола</a></li>
-          <li><a href="#catalog" class="footer-link">Лазерни Дървени Сувенири</a></li>
+          <li><a href="#catalog" class="footer-link" onclick="navigateToHome(event)">Сгъваеми Дървени Маси</a></li>
+          <li><a href="#catalog" class="footer-link" onclick="navigateToHome(event)">Алуминиеви Маси</a></li>
+          <li><a href="#catalog" class="footer-link" onclick="navigateToHome(event)">Шперплат Липа & Топола</a></li>
+          <li><a href="#catalog" class="footer-link" onclick="navigateToHome(event)">Лазерни Дървени Сувенири</a></li>
         </ul>
       </div>
       <div>
         <h4 class="footer-title">Информация</h4>
         <ul class="footer-links">
-          <li><a href="#about" class="footer-link">За фирмата</a></li>
+          <li><a href="#about" class="footer-link" onclick="navigateToHome(event)">За фирмата</a></li>
           <li><a href="#" class="footer-link">Доставка и плащане</a></li>
           <li><a href="#" class="footer-link">Вход на едро (B2B)</a></li>
           <li><a href="#" class="footer-link">Често задавани въпроси</a></li>
@@ -254,60 +317,6 @@
               </a>
             </div>
           </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- --- PRODUCT QUICK VIEW MODAL --- -->
-  <div class="modal-overlay" id="quickview-overlay">
-    <div class="modal-wrapper">
-      <button class="modal-close-btn" onclick="closeQuickView()" title="Затвори">
-        <i class="fas fa-times"></i>
-      </button>
-      
-      <div class="modal-image-panel">
-        <img id="modal-image" src="" alt="">
-      </div>
-      
-      <div class="modal-details-panel">
-        <span class="modal-product-cat" id="modal-cat">Категория</span>
-        <h3 class="modal-product-title" id="modal-title">Име на продукта</h3>
-        
-        <div class="modal-product-rating">
-          <div class="modal-stars" id="modal-stars"></div>
-          <span class="modal-rating-count">(Продукт с гарантиран произход)</span>
-        </div>
-        
-        <div class="modal-product-price" id="modal-price">0.00 лв.</div>
-        <p class="modal-product-desc" id="modal-desc">Кратко описание на продукта...</p>
-        
-        <div class="modal-specs-list">
-          <div class="modal-spec-row">
-            <span class="modal-spec-label">Материал:</span>
-            <span class="modal-spec-val" id="spec-metal">-</span>
-          </div>
-          <div class="modal-spec-row">
-            <span class="modal-spec-label">Размери / Спецификации:</span>
-            <span class="modal-spec-val" id="spec-weight">-</span>
-          </div>
-          <div class="modal-spec-row">
-            <span class="modal-spec-label">Производител:</span>
-            <span class="modal-spec-val" id="spec-stone">-</span>
-          </div>
-          <div class="modal-spec-row">
-            <span class="modal-spec-label">Доставка и сигурност:</span>
-            <span class="modal-spec-val" id="spec-packaging">-</span>
-          </div>
-        </div>
-        
-        <div class="modal-actions">
-          <div class="qty-stepper">
-            <button class="qty-btn" id="modal-qty-dec">-</button>
-            <span class="qty-val" id="modal-qty-val">1</span>
-            <button class="qty-btn" id="modal-qty-inc">+</button>
-          </div>
-          <button class="btn-premium btn-modal-add" id="modal-add-to-cart">Добави в Количката</button>
         </div>
       </div>
     </div>
